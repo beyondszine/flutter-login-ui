@@ -1,5 +1,6 @@
 // import 'package:login_page_ui/Animation/fadeanimation.dart';
 import 'package:flutter/material.dart';
+import 'package:login_page_ui/animations/imageopacitytween.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -20,27 +21,20 @@ class HomePage extends StatelessWidget {
                           fit: BoxFit.fill)),
                   child: Stack(
                     children: <Widget>[
-                      Positioned(
-                        left: 30,
-                        width: 80,
-                        height: 200,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/images/light-1.png'))),
-                        ),
-                      ),
-                      Positioned(
+                      const Positioned(
+                          left: 30,
+                          width: 80,
+                          height: 200,
+                          child: RisingImage(
+                            duration: 3,
+                            imageSrc: 'assets/images/light-1.png',
+                          )),
+                      const Positioned(
                         left: 140,
                         width: 80,
                         height: 150,
-                        child: Container(
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                  image:
-                                      AssetImage('assets/images/light-2.png'))),
-                        ),
+                        child: RisingImage(
+                            duration: 3, imageSrc: 'assets/images/light-2.png'),
                       ),
                       Positioned(
                         right: 40,
